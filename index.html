@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Resume Builder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Interactive Resume Builder</h1>
+    <div id="progress-bar"></div>
+  </header>
+  <main>
+    <section class="form-section">
+      <form id="resume-form">
+        <label for="name">Name: </label>
+        <input type="text" id="name" placeholder="enter name"/>
+        <label for="email">Email: </label>
+        <input type="email" id="email" placeholder="name@gmail.com" />
+        <label for="phone">Phone: </label>
+        <input type="tel" id="phone" placeholder="+91-0000000000" />
+        <label for="linkedin">Linkedin: </label>
+        <input type="url" id="linkedin" placeholder="https://www.linkedin.com/in/yourname" />
+        <label for="github">Github: </label>
+        <input type="url" id="github" placeholder="https://github.com/yourname" />
+        <label for="summary">Profile Summary: </label>
+        <textarea id="summary"></textarea>
+
+        <div id="education-section">
+          <h3>Education</h3>
+          <div class="edu-entry">
+            <input type="text" class="edu-input" placeholder="Degree, Institute, Year" />
+          </div>
+          <button type="button" onclick="addEducation()">+ Add Education</button>
+        </div>
+
+        <div id="experience-section">
+          <h3>Experience</h3>
+          <div class="exp-entry">
+            <input type="text" class="exp-input" placeholder="Role, Company, Duration" />
+          </div>
+          <button type="button" onclick="addExperience()">+ Add Experience</button>
+        </div>
+
+        <div id="skills-section">
+          <h3>Skills</h3>
+          <label><input type="checkbox" class="skill" value="HTML" /> HTML</label>
+          <label><input type="checkbox" class="skill" value="CSS" /> CSS</label>
+          <label><input type="checkbox" class="skill" value="JavaScript" /> JavaScript</label>
+          <label><input type="checkbox" class="skill" value="React" /> React</label>
+          <label><input type="checkbox" class="skill" value="Node.js" /> Node.js</label>
+        </div>
+
+        <button type="reset" onclick="clearForm()">Clear Form</button>
+      </form>
+    </section>
+
+    <section class="preview-section">
+      <h2>Live Resume Preview</h2>
+      <div class="resume" id="resume-preview">
+        <h1 id="preview-name"></h1>
+        <p id="preview-email"></p>
+        <p id="preview-phone"></p>
+        <p id="preview-linkedin"></p>
+        <p id="preview-github"></p>
+        <p id="preview-summary"></p>
+        <h3>Education</h3>
+        <ul id="preview-education"></ul>
+        <h3>Experience</h3>
+        <ul id="preview-experience"></ul>
+        <h3>Skills</h3>
+        <ul id="preview-skills"></ul>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
